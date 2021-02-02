@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+class App {
+  $target = null;
+  data = [];
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  constructor($target) {
+    this.$target = $target;
+
+    this.searchInput = new SearchInput({
+      $target,
+      onSearch: keyword => {
+        api.fetchCats(keyword).then(({ data }) => this.setState(data));
+      }
+    });
+
+    this.searchResult = new SearchResult({
+      $target,
+      initialData: this.data,
+      onClick: image => {
+        this.imageInfo.setState({
+          visible: true,
+          image
+        });
+      }
+    });
+
+    this.imageInfo = new ImageInfo({
+      $target,
+      data: {
+        visible: false,
+        image: null
+      }
+    });
+  }
+
+  setState(nextData) {
+    console.log(this);
+    this.data = nextData;
+    this.searchResult.setState(nextData);
+  }
 }
-
-export default App;
