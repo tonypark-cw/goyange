@@ -20,6 +20,9 @@ class SearchResult {
     }
   
     render() {
+      console.log(this.data[0] != null );
+      console.log(this.data );
+      if(this.data[0] != null && this.data){
       this.$searchResult.innerHTML = this.data
         .map(
           cat => `
@@ -29,12 +32,17 @@ class SearchResult {
           `
         )
         .join("");
-  
-      this.$searchResult.querySelectorAll(".item").forEach(($item, index) => {
-        $item.addEventListener("click", () => {
-          this.onClick(this.data[index]);
+      
+        this.$searchResult.querySelectorAll(".item").forEach(($item, index) => {
+          $item.addEventListener("click", () => {
+            this.onClick(this.data[index]);
+          });
         });
-      });
+      }else{
+        console.log(this.data);
+        this.$searchResult.innerHTML = `
+          <div>검색결과가 없습니다.</div>
+        `;
+      }
     }
   }
-  
