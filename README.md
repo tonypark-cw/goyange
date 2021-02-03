@@ -52,7 +52,7 @@
 * API fetch 코드를 `async` , `await` 문을 이용하여 수정해주세요. 해당 코드들은 에러가 났을 경우를 대비해서 적절히 처리가 되어있어야 합니다.
 * **`필수`** API 의 status code 에 따라 에러 메시지를 분리하여 작성해야 합니다. 아래는 예시입니다.
 
-```
+```JS
   const request = async (url: string) => {
     try {
       const result = await fetch(url);
