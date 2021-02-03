@@ -70,8 +70,5 @@ class ImageInfo {
           document.querySelector(".ImageInfo").style.display="none";
         }
       });
-
-     
-
     } 
 }
