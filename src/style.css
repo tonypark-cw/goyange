@@ -87,11 +87,15 @@
   }
   
   .SearchInput {
-    width: 100%;
+    width: 90%;
     font-size: 40px;
     padding: 10px 15px;
   }
-  
+  .randomBtn {
+    width: 10%;
+    font-size: 40px;
+    padding: 10px 15px;
+  }
   .ImageInfo {
     position: fixed;
     left: 0;

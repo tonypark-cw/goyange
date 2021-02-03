@@ -5,7 +5,6 @@ class SearchInput {
     const $searchInput = document.createElement("input");
     this.$searchInput = $searchInput;
     this.$searchInput.placeholder = "고양이를 검색해보세요.|";
-
     $searchInput.className = "SearchInput";
     $target.appendChild($searchInput);
 
@@ -14,8 +13,15 @@ class SearchInput {
         onSearch(e.target.value);
       }
     });
-
     console.log("SearchInput created.", this);
+
+    
+    const $randomBtn = document.createElement("button");
+    this.$randomBtn = $randomBtn;
+    this.$randomBtn.textContent = "랜덤";
+    $randomBtn.className = "randomBtn";
+    $target.appendChild($randomBtn);
+
   }
   render() {}
 }
