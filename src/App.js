@@ -1,14 +1,16 @@
 class App {
   $target = null;
   data = [];
-
+  
   constructor($target) {
     this.$target = $target;
 
     this.searchInput = new SearchInput({
       $target,
       onSearch: keyword => {
-        api.fetchCats(keyword).then(({ data }) => this.setState(data));
+        api.fetchCats(keyword).then(({ data }) => {
+          this.setState(data);
+        });
       }
     });
 
@@ -27,13 +29,13 @@ class App {
       $target,
       data: {
         visible: false,
-        image: null
-      }
+        image: null,
+      },
+      
     });
   }
 
   setState(nextData) {
-    console.log(this);
     this.data = nextData;
     this.searchResult.setState(nextData);
   }

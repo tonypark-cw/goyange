@@ -1,8 +1,8 @@
 class ImageInfo {
     $imageInfo = null;
     data = null;
-  
-    constructor({ $target, data }) {
+    
+    constructor({ $target, data}) {
       const $imageInfo = document.createElement("div");
       $imageInfo.className = "ImageInfo";
       this.$imageInfo = $imageInfo;
@@ -18,11 +18,12 @@ class ImageInfo {
     }
   
     render() {
+      let catId = 0;
       
-  
       if (this.data.visible) {
         
-        const { name, url, temperament, origin } = this.data.image;
+        const { url , id, name,temperament, origin } = this.data.image;
+        catId = id;
         this.$imageInfo.innerHTML = `
           <div class="content-wrapper">
             <div class="title">
@@ -31,8 +32,8 @@ class ImageInfo {
             </div>
             <img src="${url}" alt="${name}"/>        
             <div class="description">
-              <div>성격: ${temperament}</div>
-              <div>태생: ${origin}</div>
+              <div>성격: <span id="temperament"></span></div>
+              <div>태생: <span id="origin"></span></div>
             </div>
           </div>
           <script>
@@ -41,10 +42,19 @@ class ImageInfo {
       } else {
         this.$imageInfo.style.display = "none";
       }
+      // let cat = [];
+      // api.fetchCat(catId).then((data) => {
+      //   cat = data;
+      //   console.log(cat.data.origin);
+      //   console.log(cat.data.temperament);
+      //   document.getElementById("origin").value=cat.data.origin;
+      //   document.getElementById("temperament").value = cat.data.temperament;
+      // });   
+
 
       let close = document.getElementById("closeBtn");
       if(close){
-        close.addEventListener("click", function (e){
+        close.addEventListener("click", function (){
           document.querySelector(".ImageInfo").style.display="none";
         });
       }
@@ -61,7 +71,7 @@ class ImageInfo {
         }
       });
 
-    }
-    
-  }
-  
+     
+
+    } 
+}
