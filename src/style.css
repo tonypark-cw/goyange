@@ -159,14 +159,11 @@
     }
   }
   
-  body {
+  body,
+  h1,
+  span,
+  div,
+  p {
     background: var(--bkg-color);
     color:var(--text-color);
   }
-
-  
-  h1,
-  p {
-    color: var(--text-color);
-  }
-  
