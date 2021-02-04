@@ -3,7 +3,7 @@ const API_ENDPOINT =
 
 const api = {
   fetchCats: keyword => {
-    console.log(keyword);
+    // console.log(keyword);
       return fetch(`${API_ENDPOINT}/api/cats/search?q=${keyword}`).then(res =>
         res.json()
       );
