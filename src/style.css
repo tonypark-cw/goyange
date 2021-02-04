@@ -132,18 +132,33 @@
   
 
 
+
+
   /* 다크모드 관련 추가 코드 아래로 쭉 */ 
   @media (prefers-color-scheme: dark) {
     /* defaults to dark theme */
-    body {
+    body  {
       --text-color: #FFFFFF;
       --bkg-color:  #000000;
     }
-    body.light-theme {
+    body.dark-theme {
       --text-color: #000000;
       --bkg-color:  #FFFFFF;
     }
   }
+  
+  @media (prefers-color-scheme: light) {
+    /* defaults to light theme */
+    body  {
+      --text-color: #000000;
+      --bkg-color:  #FFFFFF;
+    }
+    body.light-theme {
+      --text-color: #FFFFFF;
+      --bkg-color:  #000000;
+    }
+  }
+  
   
   * {
     font-family: Arial, Helvetica, sans-serif;
@@ -157,3 +172,4 @@
   p {
     color: var(--text-color);
   }
+  
