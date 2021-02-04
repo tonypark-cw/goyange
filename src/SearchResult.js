@@ -79,15 +79,5 @@ class SearchResult {
         <div>검색결과가 없습니다.</div>
         `;
       }
-      
-      // window.onmousewheel = function(e){
-      //   console.log(e);
-      //   console.log(e.pageX);
-      //   if(e.wheelDelta === -120){
-          
-      //   }else{
-      //     console.log("휠 업");
-      //   }
-      // }
     }
 }
