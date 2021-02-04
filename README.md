@@ -89,8 +89,11 @@
 <li>API&nbsp;fetch&nbsp;코드를&nbsp;<code>async</code>&nbsp;,&nbsp;<code>await</code>&nbsp;문을&nbsp;이용하여&nbsp;수정해주세요.&nbsp;해당&nbsp;코드들은&nbsp;에러가&nbsp;났을&nbsp;경우를&nbsp;대비해서&nbsp;적절히&nbsp;처리가&nbsp;되어있어야&nbsp;합니다.</li>
 <li><strong><code>필수</code></strong>&nbsp;API&nbsp;의&nbsp;status&nbsp;code&nbsp;에&nbsp;따라&nbsp;에러&nbsp;메시지를&nbsp;분리하여&nbsp;작성해야&nbsp;합니다.&nbsp;아래는&nbsp;예시입니다.</li>
 </ul>
-<div class="highlight"><pre class="codehilite"><code>&nbsp;&nbsp;const&nbsp;request&nbsp;=&nbsp;async&nbsp;(url:&nbsp;string)&nbsp;=&gt;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;result&nbsp;=&nbsp;await&nbsp;fetch(url);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;result.json();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(e)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.warn(e);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;api&nbsp;=&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fetchGif:&nbsp;keyword&nbsp;=&gt;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;request(`${API_ENDPOINT}/api/gif/search?q=${keyword}`);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fetchGifAll:&nbsp;()&nbsp;=&gt;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;request(`${API_ENDPOINT}/api/gif/all`);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;};
-</code></pre></div>
+
+```JS
+ const request = async (url: string) => {     try {       const result = await fetch(url);       return result.json();     } catch (e) {       console.warn(e);     }   }    const api = {     fetchGif: keyword => {       return request(`${API_ENDPOINT}/api/gif/search?q=${keyword}`);     },     fetchGifAll: () => {       return request(`${API_ENDPOINT}/api/gif/all`);     }   };
+```
+
 <ul>
 <li>SearchResult&nbsp;에&nbsp;각&nbsp;아이템을&nbsp;클릭하는&nbsp;이벤트를&nbsp;Event&nbsp;Delegation&nbsp;기법을&nbsp;이용해&nbsp;수정해주세요.</li>
 <li>컴포넌트&nbsp;내부의&nbsp;함수들이나&nbsp;Util&nbsp;함수들을&nbsp;작게&nbsp;잘&nbsp;나누어주세요.</li>
