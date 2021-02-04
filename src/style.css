@@ -159,14 +159,11 @@
     }
   }
   
-  
-  * {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
   body {
     background: var(--bkg-color);
+    color:var(--text-color);
   }
+
   
   h1,
   p {
