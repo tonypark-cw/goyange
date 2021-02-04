@@ -21,7 +21,11 @@ class SearchInput {
     this.$randomBtn.textContent = "랜덤";
     $randomBtn.className = "randomBtn";
     $target.appendChild($randomBtn);
-
+    $randomBtn.addEventListener("click", e =>{
+      if(e){
+        onSearch("random");
+      }
+    });
   }
   render() {}
 }

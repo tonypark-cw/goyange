@@ -7,12 +7,19 @@ class App {
 
     this.searchInput = new SearchInput({
       $target,
-      onSearch: keyword => {
-        api.fetchCats(keyword).then(({ data }) => {
-          this.setState(data);
-        });
+      onSearch: (keyword => {
+        console.log(keyword, keyword == "random");
+        if(keyword == "random"){
+          api.fetchRandom().then(({ data }) => {
+            this.setState(data);
+          });
+        }else{
+          api.fetchCats(keyword).then(({ data }) => {
+            this.setState(data);
+          });
+        }
       }
-    });
+    )});
 
     this.searchResult = new SearchResult({
       $target,

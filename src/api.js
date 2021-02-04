@@ -3,15 +3,22 @@ const API_ENDPOINT =
 
 const api = {
   fetchCats: keyword => {
-    return fetch(`${API_ENDPOINT}/api/cats/search?q=${keyword}`).then(res =>
+    console.log(keyword);
+      return fetch(`${API_ENDPOINT}/api/cats/search?q=${keyword}`).then(res =>
+        res.json()
+      );
+    },
+  fetchRandom: () => {
+    return fetch(`${API_ENDPOINT}/api/cats/random50`).then(res =>
       res.json()
     );
-    
   },
+    
+}
   // fetchCat: id => {
   //   return fetch(`${API_ENDPOINT}/api/cats/${id}`).then(res => 
   //     res.json()
   //   );
   // },
 
-};
+
