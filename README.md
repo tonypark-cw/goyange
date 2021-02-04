@@ -1,7 +1,8 @@
 <h2>주제(시나리오)</h2>
 
 <p>고양이를&nbsp;좋아하는&nbsp;당신은&nbsp;고양이&nbsp;사진&nbsp;전용&nbsp;검색&nbsp;웹사이트를&nbsp;운영하고&nbsp;있었습니다.<br/>
-지금까지는&nbsp;혼자&nbsp;소소하게&nbsp;운영해왔는데,&nbsp;생각보다&nbsp;고양이&nbsp;사진을&nbsp;원하는&nbsp;사람들이&nbsp;많아지면서&nbsp;해결해야&nbsp;할&nbsp;문제들이&nbsp;하나씩&nbsp;드러나기&nbsp;시작했어요.<br/>
+지금까지는&nbsp;혼자&nbsp;소소하게&nbsp;운영해왔는데,<br/>
+생각보다&nbsp;고양이&nbsp;사진을&nbsp;원하는&nbsp;사람들이&nbsp;많아지면서&nbsp;해결해야&nbsp;할&nbsp;문제들이&nbsp;하나씩&nbsp;드러나기&nbsp;시작했어요.<br/>
 몇&nbsp;개의&nbsp;문제는&nbsp;금세&nbsp;고칠&nbsp;수&nbsp;있지만,&nbsp;기존&nbsp;코드를&nbsp;자세히&nbsp;봐야만&nbsp;고칠&nbsp;수&nbsp;있는&nbsp;문제들도&nbsp;있어서&nbsp;조금&nbsp;골치아픈&nbsp;상황!<br/>
 심지어&nbsp;최대&nbsp;4시간&nbsp;내에&nbsp;수정한&nbsp;뒤&nbsp;배포를&nbsp;해야만&nbsp;합니다.<br/>
 당신이라면&nbsp;기존&nbsp;서비스의&nbsp;여러&nbsp;버그를&nbsp;제한시간&nbsp;내에&nbsp;고치고,&nbsp;유저를&nbsp;위한&nbsp;추가&nbsp;기능까지&nbsp;구현해볼&nbsp;수&nbsp;있을까요?<br/>
