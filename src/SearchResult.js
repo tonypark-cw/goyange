@@ -30,12 +30,13 @@ class SearchResult {
         `
       );
 
-      console.log(temp);
       let idx = 12;
       let partial = temp.slice(0, idx).join("");
       this.$searchResult.innerHTML = partial;
       let count = 0;
       //스크롤 바닥 감지
+      console.log("로딩전");
+      console.log(document.querySelectorAll(".item"));
       window.onscroll = function(e) {
         
           //추가되는 임시 콘텐츠
@@ -43,11 +44,12 @@ class SearchResult {
           if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
             //실행할 로직 (콘텐츠 추가)
               count++;
-              console.log(e.target);
               let dest = document.querySelector(".SearchResult");
+              console.log("레이지로딩 실행된다.");
+              console.log(document.querySelectorAll(".item"));
               dest.innerHTML += temp.slice(idx, idx+3).join("");
               idx += 4;
-              
+              addClick();
           }
       
       };
@@ -67,17 +69,23 @@ class SearchResult {
         });
         io.observe(target);
       };
-    
-      this.$searchResult.querySelectorAll(".item").forEach(($item, index) => {
-        $item.addEventListener("click", () => {
-          this.onClick(this.data[index]);
+      const addClick = () => {
+        this.$searchResult.querySelectorAll(".item").forEach(($item, index) => {
+          $item.addEventListener("click", () => {
+            console.log("클릭인식");
+            this.onClick(this.data[index]);
+          });
         });
-      });
+      }
+      addClick();
+      
       images.forEach(lazyLoad);
+
       if(this.data.length <= 0){
         this.$searchResult.innerHTML = `
         <div>검색결과가 없습니다.</div>
         `;
       }
+      
     }
 }
