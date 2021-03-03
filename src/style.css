@@ -92,6 +92,7 @@
     padding: 10px 15px;
   }
   .randomBtn {
+    min-width: 100px;
     width: 10%;
     font-size: 40px;
     padding: 10px 15px;

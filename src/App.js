@@ -8,7 +8,6 @@ class App {
     this.searchInput = new SearchInput({
       $target,
       onSearch: (keyword => {
-        // console.log(keyword, keyword == "random");
         if(keyword == "random"){
           api.fetchRandom().then(({ data }) => {
             this.setState(data);
